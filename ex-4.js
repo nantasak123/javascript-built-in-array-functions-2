@@ -374,4 +374,29 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+function checkingMemberName(memberName){
+  return memberName.member
+}
+function getOnlyName(getName){
+  return getName.name
+}
+let filterMember = bills.filter(checkingMemberName)
+let filterMemberName = filterMember.map(checkingMemberName)
+const billMembers = filterMemberName.map(getOnlyName)
+
+
+
+function checkingSameMemmber(memberName){
+  let coutMember = []
+  for(let i = 0 ; i < memberName.length ; i++){
+      if(coutMember.indexOf(memberName[i]) == -1)  {
+        coutMember.push(memberName[i])
+      }
+    }
+    return coutMember
+}
+
+let totalMembers = []
+totalMembers = checkingSameMemmber(billMembers)  
+
+console.log(`Unique Members Count: ${totalMembers.length}`)

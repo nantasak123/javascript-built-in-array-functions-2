@@ -374,4 +374,16 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+function checkingMemberName(memberName){
+  return memberName.member
+}
+function getOnlyName(getName){
+  return getName.name
+}
+let filterMember = bills.filter(checkingMemberName)
+let filterMemberName = filterMember.map(checkingMemberName)
+const billMembers = filterMemberName.map(getOnlyName)
+
+console.log(billMembers)
+
+

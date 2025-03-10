@@ -374,5 +374,26 @@ const bills = [
 ];
 
 // Start coding here
+function getToatalPaidByLocation(totalPaidAndLocation){
+    let getLocationArray = []
+    let getTotalPaidArray = []
+    for(let i = 0 ; i < totalPaidAndLocation.length ; i++){
+        if(getLocationArray.includes(totalPaidAndLocation[i].location)){
+            getTotalPaidArray[getLocationArray.indexOf(totalPaidAndLocation[i].location)]  = getTotalPaidArray[getLocationArray.indexOf(totalPaidAndLocation[i].location)] + totalPaidAndLocation[i].total
+        }
+        else{
+            getLocationArray.push(totalPaidAndLocation[i].location)
+            getTotalPaidArray.push(totalPaidAndLocation[i].total)
+        }
+    }
+    return {getLocationArray , getTotalPaidArray}
+}
+function showTotalPaidByLocation(getLocation,getTotalPaid){
+    for(let i = 0 ; i < getLocation.length ; i++){
+        console.log(`${getLocation[i]} : ${getTotalPaid[i]}`)
+    }
 
-const totalPaidByLocation;
+}
+
+const totalPaidByLocation = getToatalPaidByLocation(bills)
+const showTotalPaidOfProvide = showTotalPaidByLocation(totalPaidByLocation.getLocationArray,totalPaidByLocation.getTotalPaidArray)

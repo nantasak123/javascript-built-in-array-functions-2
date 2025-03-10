@@ -374,3 +374,13 @@ const bills = [
 ];
 
 // Start coding here
+function totalSale(x,y){
+  return x+y
+}
+function getOnlyTotalSale(totalSale){
+  return totalSale.total
+}
+let getOnlyTotalSaleNumber = bills.map(getOnlyTotalSale) 
+let result = getOnlyTotalSaleNumber.reduce(totalSale)
+
+console.log("Total bill transaction is "+result)
