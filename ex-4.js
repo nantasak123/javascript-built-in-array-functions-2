@@ -389,7 +389,7 @@ const billMembers = filterMemberName.map(getOnlyName)
 function checkingSameMemmber(memberName){
   let coutMember = []
   for(let i = 0 ; i < memberName.length ; i++){
-      if(coutMember.indexOf(memberName[i]) == -1)  {
+      if(coutMember.includes(memberName[i]) != 1)  {
         coutMember.push(memberName[i])
       }
     }
